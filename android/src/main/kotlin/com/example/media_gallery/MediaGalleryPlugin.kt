@@ -232,7 +232,7 @@ class MediaGalleryPlugin: FlutterPlugin, MethodCallHandler {
 
           val imageCountCursor = context.contentResolver.query(
                   MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                  arrayOf("count(*) AS count"),
+                  arrayOf(MediaStore.Images.Media._ID),
                   if (collectionId == "__ALL__") null else "bucket_id = $collectionId",
                   null,
                   null)
