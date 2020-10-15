@@ -305,7 +305,7 @@ class MediaGalleryPlugin: FlutterPlugin, MethodCallHandler {
       if (context is Context) {
         val videoCountCursor = context.contentResolver.query(
                   MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
-                  arrayOf("count(*) AS count"),
+                  arrayOf(MediaStore.Video.Media._ID),
                 if (collectionId == "__ALL__") null else "bucket_id = $collectionId",
                   null,
                   null)
